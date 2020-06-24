@@ -12,18 +12,7 @@ themes <- read.csv('themes.csv')
 
 # Define server logic required to draw a histogram
 shinyServer(function(input, output, session) {
-  
-  #text1
-  output$selected_var <- renderText({ 
-    paste("You have selected", input$var)
-  })
-  
-  #text2
-  output$selected_range <- renderText({ 
-    #paste("You have selected", input$range[1], "to", input$range[2])
-    paste("sd","sd")
-  })
-  
+
   #plot1
   output$plot1 <- renderPlot({
     
