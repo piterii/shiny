@@ -51,8 +51,8 @@ shinyUI(
                       sidebarLayout(
                         position = "left",
                         sidebarPanel(h3("User Panel"),
-                                     radioButtons("radio3",h3("Show values on boxplots?"),
-                                                  choices = list("Yes" = "yes", "No" = "no"),selected = "no")
+                                     radioButtons("radio3",h3("Choose color"),
+                                                  choices = list("blue" = "blue", "green" = "green", "yellow" = "yellow", "lightblue" = "lightblue"),selected = "lightblue")
                       ),
 
              mainPanel("",

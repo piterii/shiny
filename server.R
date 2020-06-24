@@ -147,7 +147,7 @@ shinyServer(function(input, output, session) {
     popular_themes %>% group_by(name) %>% select(name, n) %>% summarise(n = sum(n)) %>% arrange(desc(n)) %>% slice(0:10) %>%arrange(n) -> popular_themes
     
     g<- ggplot(data = sets_themes[sets_themes$name.y %in% popular_themes$name[5:10],])+
-      geom_boxplot(aes(x = name.y, y = num_parts), color = 'navyblue', fill = 'lightblue', varwidth  = TRUE )+
+      geom_boxplot(aes(x = name.y, y = num_parts), color = 'navyblue', fill = input$radio3, varwidth  = TRUE )+
       scale_y_continuous(limits = c(0,1500))+
       ylab("Number of parts")+
       xlab("Theme")+
@@ -156,12 +156,6 @@ shinyServer(function(input, output, session) {
       theme(plot.title = element_text(hjust = 0.5))
     
 
-    
-    if (input$radio3 == "yes") {
-
-        g <- g+ geom_jitter(aes(x = name.y, y = num_parts), width = 0.2, alpha = 0.3)
-
-    }
     
     g
 
