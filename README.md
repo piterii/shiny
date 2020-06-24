@@ -1,6 +1,7 @@
 # shiny
 
 LEGO Shiny dashboard for Reproducible Research classes.
+
 Author: Piotr Heba 372644
 
 Link to app:
